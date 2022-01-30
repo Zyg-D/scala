@@ -1,5 +1,5 @@
 ```scala
-// implicits - kad veiktu `seq`
+// implicits - kad veiktu `Seq()`
 import spark.implicits._
 import org.apache.spark.sql.functions._
 
