@@ -15,3 +15,5 @@ val df1 = Seq(
 
 val col1 = ($"A" === 1) && ($"B" === true)
 ```
+
+`[x for x in list if x!=somevalue]` >>> `for (x <- list if x != somevalue) yield x`
