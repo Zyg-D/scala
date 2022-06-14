@@ -11,7 +11,7 @@ val df = Seq("{'k1':'v1','k2':'v2'}").toDF("c1")
 // Array:
 val df1 = Seq(
     (Seq("v1", "v2"))
-    ).toDF("arr_col")
+).toDF("arr_col")
 
 val col1 = ($"A" === 1) && ($"B" === true)
 ```
