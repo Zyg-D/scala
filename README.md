@@ -20,3 +20,13 @@ val col1 = ($"A" === 1) && ($"B" === true)
 `[x for x in list if x!=somevalue]` >>> `for (x <- list if x != somevalue) yield x`  
 `*[lit(x) for x in list_of_str]` >>> `list_of_str map lit: _*`  
 `*list_of_str` >>> probably `list_of_str: _*`  
+
+```scala
+// Average of array
+aggregate(
+    arr,
+    struct(lit(0).alias("sum"), lit(0).alias("count")),
+    (acc, x) => struct((acc("sum") + x).alias("sum"), (acc("count") + 1).alias("count")),
+    (s) => s("sum") / s("count")
+)
+```
