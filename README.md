@@ -30,5 +30,3 @@ aggregate(
     (s) => s("sum") / s("count")
 )
 ```
-val cols = Array($"col1", $"col2", $"col3")
-f1.withColumn("q", aggregate(cols, struct(lit(0).alias("sum"), lit(0).alias("count")), (acc, x) => struct((acc("sum") + coalesce(x, lit(0))).alias("sum"), (acc("count") + coalesce(x.cast("boolean").cast("int"), lit(0))).alias("count")), (s) => s("sum") / s("count"))).show()
