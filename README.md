@@ -13,6 +13,12 @@ val df = Seq("{'k1':'v1','k2':'v2'}").toDF("c1")
 val df1 = Seq(
     (Seq("v1", "v2"))
 ).toDF("arr_col")
+// Contains NULL
+val df = Seq[(String, Integer)](
+    ("Bob", 16),
+    ("Alice", null),
+    (null, null)
+).toDF("name", "age")
 
 val col1 = ($"A" === 1) && ($"B" === true)
 ```
