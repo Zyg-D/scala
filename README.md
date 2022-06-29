@@ -27,6 +27,10 @@ val col1 = ($"A" === 1) && ($"B" === true)
 `*[lit(x) for x in list_of_str]` >>> `list_of_str map lit: _*`  
 `*list_of_str` >>> `list_of_str: _*`  
 
+`r"\d"` >>> `raw"\d"`  
+`r"^\d$"` >>> `raw"^\d$$"`  
+`~c.rlike(r"^\d$")` >>> `!(c.rlike(raw"^\d$$"))`  
+
 ```scala
 // Average of array
 aggregate(
