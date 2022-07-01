@@ -21,7 +21,6 @@ val df = Seq[(String, Integer)](
 ).toDF("name", "age")
 
 val col1 = ($"A" === 1) && ($"B" === true) || ($"C" === true)
-df.col_name >>> df.col("col_name")
 ```
 
 `[x for x in list if x!=somevalue]` >>> `for (x <- list if x != somevalue) yield x`  
@@ -31,6 +30,8 @@ df.col_name >>> df.col("col_name")
 `r"\d"` >>> `raw"\d"`  
 `r"^\d$"` >>> `raw"^\d$$"`  
 `~c.rlike(r"^\d$")` >>> `!(c.rlike(raw"^\d$$"))`  
+
+`df.col_name` >>> `df.col("col_name")`
 
 ```scala
 // Average of array
