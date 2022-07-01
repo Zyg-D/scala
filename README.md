@@ -1,6 +1,7 @@
 ```scala
 // implicits - kad veiktu Seq() ??
 import spark.implicits._
+import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.Window
 
