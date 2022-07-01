@@ -20,7 +20,8 @@ val df = Seq[(String, Integer)](
     (null, null)
 ).toDF("name", "age")
 
-val col1 = ($"A" === 1) && ($"B" === true)
+val col1 = ($"A" === 1) && ($"B" === true) || ($"C" === true)
+df.col_name >>> df.col("col_name")
 ```
 
 `[x for x in list if x!=somevalue]` >>> `for (x <- list if x != somevalue) yield x`  
