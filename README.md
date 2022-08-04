@@ -63,6 +63,6 @@ aggregate(
     arr,
     struct(lit(0).alias("sum"), lit(0).alias("count")),
     (acc, x) => struct((acc("sum") + x).alias("sum"), (acc("count") + 1).alias("count")),
-    (s) => s("sum") / s("count")
+    s => s("sum") / s("count")
 )
 ```
