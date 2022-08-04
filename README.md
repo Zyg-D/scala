@@ -33,16 +33,16 @@ val df = Seq[(String, Integer)](
 // Struct with field names
 case class Person(name: String, age: Int)
 case class Car(mileage: Double, owner: Person)
-val df = spark.createDataFrame(Seq(
+val df = Seq(
     Car(81400.8, Person("John", 37)),
     Car(12090.2, Person("Jane", 25))
-))
+).toDF()
 
 // Struct w/o field names
-val df = spark.createDataFrame(Seq(
-  ("a", ("b", "c")),
-  ("d", ("e", "f"))
-))
+val df = Seq(
+    ("a", ("b", "c")),
+    ("d", ("e", "f"))
+).toDF()
 
 val col1 = ($"A" === 1) && ($"B" === true) || ($"C" === true)
 ```
